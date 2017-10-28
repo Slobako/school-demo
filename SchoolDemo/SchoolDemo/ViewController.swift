@@ -9,9 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var forecastService: ForecastService = ForecastService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        forecastService.retrieveNYCForecast { ([String]) in
+            //
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
