@@ -16,13 +16,29 @@
                     <view key="view" contentMode="scaleToFill" id="fmV-sS-c7z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-3G-2B7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="l1E-tI-KzU" id="wdt-ta-WWv"/>
+                                    <outlet property="delegate" destination="l1E-tI-KzU" id="dhR-b2-mfx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uBe-3G-2B7" firstAttribute="trailing" secondItem="oVa-i5-nY7" secondAttribute="trailing" id="2t1-Ht-K4R"/>
+                            <constraint firstItem="uBe-3G-2B7" firstAttribute="leading" secondItem="oVa-i5-nY7" secondAttribute="leading" id="4l1-UP-ZJd"/>
+                            <constraint firstItem="uBe-3G-2B7" firstAttribute="bottom" secondItem="oVa-i5-nY7" secondAttribute="bottom" id="Qaw-0P-DP1"/>
+                            <constraint firstItem="uBe-3G-2B7" firstAttribute="top" secondItem="fmV-sS-c7z" secondAttribute="top" id="mtE-hK-Xyg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oVa-i5-nY7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRg-Vy-KDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="-63"/>
+            <point key="canvasLocation" x="-452" y="-63.418290854572717"/>
         </scene>
     </scenes>
 </document>
