@@ -10,15 +10,24 @@ import UIKit
 
 class ForecastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var forecastTableView: UITableView!
+    
+    
     lazy var forecastService: ForecastService = ForecastService()
     var arrayOfDailyForecasts = [DailyForecast?]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        forecastTableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil), forCellReuseIdentifier: "forecastTableViewCell")
+        forecastTableView.tableFooterView = UIView(frame: .zero)
+        
         forecastService.retrieveNYCForecast {[unowned self] (arrayOfDailyForecasts) in
             print(arrayOfDailyForecasts)
             self.arrayOfDailyForecasts = arrayOfDailyForecasts
+            DispatchQueue.main.async(execute: {
+                self.forecastTableView.reloadData()
+            })
         }
         
         

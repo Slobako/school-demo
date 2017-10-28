@@ -35,6 +35,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oVa-i5-nY7"/>
                     </view>
+                    <connections>
+                        <outlet property="forecastTableView" destination="uBe-3G-2B7" id="2R3-7p-Uav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRg-Vy-KDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
