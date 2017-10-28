@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ForecastViewController.swift
 //  SchoolDemo
 //
 //  Created by Slobodan Kovrlija on 10/27/17.
@@ -8,17 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ForecastViewController: UIViewController {
     
     lazy var forecastService: ForecastService = ForecastService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        forecastService.retrieveNYCForecast { ([String]) in
-            //
+        forecastService.retrieveNYCForecast { (arrayOfDailyForecasts) in
+            print(arrayOfDailyForecasts)
         }
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
