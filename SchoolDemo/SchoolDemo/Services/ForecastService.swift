@@ -25,8 +25,18 @@ struct ForecastService {
             if urlResponse != nil {
                 do {
                     guard let data = data else { return }
+                    var arrayOfDailyForecasts = [DailyForecast]()
                     if let responseObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                        print(responseObject)
+                        
+                        if let response = responseObject["response"] as? [[String: Any]] {
+                            
+                            if let periodsArray = response[0]["periods"] as? [[String: Any]] {
+                                print(periodsArray)
+                                for day in periodsArray {
+                                    
+                                }
+                            }
+                        }
                     }
                     
                 } catch let error {

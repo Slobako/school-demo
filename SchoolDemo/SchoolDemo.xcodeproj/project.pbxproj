@@ -15,6 +15,7 @@
 		450EDD5D1FA40C22005DFCFF /* SchoolDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD5C1FA40C22005DFCFF /* SchoolDemoTests.swift */; };
 		450EDD681FA417A7005DFCFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD671FA417A7005DFCFF /* Constants.swift */; };
 		450EDD6A1FA4185F005DFCFF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD691FA4185F005DFCFF /* ForecastService.swift */; };
+		450EDD6D1FA42891005DFCFF /* DailyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD6C1FA42891005DFCFF /* DailyForecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		450EDD5E1FA40C22005DFCFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450EDD671FA417A7005DFCFF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		450EDD691FA4185F005DFCFF /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		450EDD6C1FA42891005DFCFF /* DailyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +84,13 @@
 			isa = PBXGroup;
 			children = (
 				450EDD471FA40C21005DFCFF /* AppDelegate.swift */,
-				450EDD491FA40C21005DFCFF /* ViewController.swift */,
-				450EDD4B1FA40C21005DFCFF /* Main.storyboard */,
-				450EDD4E1FA40C21005DFCFF /* Assets.xcassets */,
-				450EDD501FA40C21005DFCFF /* LaunchScreen.storyboard */,
-				450EDD531FA40C21005DFCFF /* Info.plist */,
 				450EDD671FA417A7005DFCFF /* Constants.swift */,
-				450EDD691FA4185F005DFCFF /* ForecastService.swift */,
+				450EDD6B1FA42833005DFCFF /* Models */,
+				450EDD6E1FA4298E005DFCFF /* Services */,
+				450EDD6F1FA429A7005DFCFF /* Controllers */,
+				450EDD701FA429C2005DFCFF /* Storyboards */,
+				450EDD4E1FA40C21005DFCFF /* Assets.xcassets */,
+				450EDD531FA40C21005DFCFF /* Info.plist */,
 			);
 			path = SchoolDemo;
 			sourceTree = "<group>";
@@ -100,6 +102,39 @@
 				450EDD5E1FA40C22005DFCFF /* Info.plist */,
 			);
 			path = SchoolDemoTests;
+			sourceTree = "<group>";
+		};
+		450EDD6B1FA42833005DFCFF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				450EDD6C1FA42891005DFCFF /* DailyForecast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		450EDD6E1FA4298E005DFCFF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				450EDD691FA4185F005DFCFF /* ForecastService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		450EDD6F1FA429A7005DFCFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				450EDD491FA40C21005DFCFF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		450EDD701FA429C2005DFCFF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				450EDD4B1FA40C21005DFCFF /* Main.storyboard */,
+				450EDD501FA40C21005DFCFF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +244,7 @@
 				450EDD4A1FA40C21005DFCFF /* ViewController.swift in Sources */,
 				450EDD481FA40C21005DFCFF /* AppDelegate.swift in Sources */,
 				450EDD681FA417A7005DFCFF /* Constants.swift in Sources */,
+				450EDD6D1FA42891005DFCFF /* DailyForecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
