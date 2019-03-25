@@ -16,6 +16,8 @@
 		450EDD681FA417A7005DFCFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD671FA417A7005DFCFF /* Constants.swift */; };
 		450EDD6A1FA4185F005DFCFF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD691FA4185F005DFCFF /* ForecastService.swift */; };
 		450EDD6D1FA42891005DFCFF /* DailyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450EDD6C1FA42891005DFCFF /* DailyForecast.swift */; };
+		4522FE152248ABDF0018D7A9 /* DailyForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4522FE142248ABDF0018D7A9 /* DailyForecastViewModel.swift */; };
+		4522FE172248B3640018D7A9 /* ForecastCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4522FE162248B3640018D7A9 /* ForecastCellViewModel.swift */; };
 		4591F6B71FA4337300A76FF8 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4591F6B51FA4337300A76FF8 /* ForecastTableViewCell.swift */; };
 		4591F6B81FA4337300A76FF8 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4591F6B61FA4337300A76FF8 /* ForecastTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		450EDD671FA417A7005DFCFF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		450EDD691FA4185F005DFCFF /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		450EDD6C1FA42891005DFCFF /* DailyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecast.swift; sourceTree = "<group>"; };
+		4522FE142248ABDF0018D7A9 /* DailyForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastViewModel.swift; sourceTree = "<group>"; };
+		4522FE162248B3640018D7A9 /* ForecastCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCellViewModel.swift; sourceTree = "<group>"; };
 		4591F6B51FA4337300A76FF8 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		4591F6B61FA4337300A76FF8 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +94,7 @@
 				450EDD471FA40C21005DFCFF /* AppDelegate.swift */,
 				450EDD671FA417A7005DFCFF /* Constants.swift */,
 				450EDD6B1FA42833005DFCFF /* Models */,
+				4522FE132248ABAA0018D7A9 /* ViewModel */,
 				450EDD6E1FA4298E005DFCFF /* Services */,
 				4591F6B41FA4334D00A76FF8 /* Views */,
 				450EDD6F1FA429A7005DFCFF /* Controllers */,
@@ -140,6 +145,15 @@
 				450EDD501FA40C21005DFCFF /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4522FE132248ABAA0018D7A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4522FE142248ABDF0018D7A9 /* DailyForecastViewModel.swift */,
+				4522FE162248B3640018D7A9 /* ForecastCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4591F6B41FA4334D00A76FF8 /* Views */ = {
@@ -201,10 +215,12 @@
 				TargetAttributes = {
 					450EDD431FA40C21005DFCFF = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					450EDD571FA40C22005DFCFF = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 450EDD431FA40C21005DFCFF;
 					};
@@ -255,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4522FE152248ABDF0018D7A9 /* DailyForecastViewModel.swift in Sources */,
+				4522FE172248B3640018D7A9 /* ForecastCellViewModel.swift in Sources */,
 				4591F6B71FA4337300A76FF8 /* ForecastTableViewCell.swift in Sources */,
 				450EDD6A1FA4185F005DFCFF /* ForecastService.swift in Sources */,
 				450EDD4A1FA40C21005DFCFF /* ForecastViewController.swift in Sources */,
@@ -419,7 +437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.slobodan.SchoolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -434,7 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.slobodan.SchoolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -450,7 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.slobodan.SchoolDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SchoolDemo.app/SchoolDemo";
 			};
@@ -467,7 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.slobodan.SchoolDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SchoolDemo.app/SchoolDemo";
 			};

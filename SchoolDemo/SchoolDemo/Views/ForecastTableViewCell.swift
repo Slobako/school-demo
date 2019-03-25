@@ -17,23 +17,32 @@ class ForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var maxTempLabel: UILabel!
     
     // MARK: - Properties
-    var dailyForecast: DailyForecast? {
-        
+    var forecastCellVM: ForecastCellViewModel? {
         didSet {
-            if let dateTimeISO = dailyForecast?.dateTimeISO {
-                dateLabel.text = dateTimeISO
-            }
-            if let maxTempF = dailyForecast?.maxTempF {
-                maxTempLabel.text = String(maxTempF)
-            }
-            if let minTempF = dailyForecast?.minTempF {
-                minTempLabel.text = String(minTempF)
-            }
-            if let icon = dailyForecast?.icon {
-                iconImageView.image = UIImage.init(named: icon)
-            }
+            dateLabel.text = forecastCellVM?.date
+            maxTempLabel.text = forecastCellVM?.maxTemp
+            minTempLabel.text = forecastCellVM?.minTemp
+            iconImageView.image = UIImage.init(named: forecastCellVM?.iconName ?? "default_icon")
         }
     }
+    
+//    var dailyForecast: DailyForecast? {
+//        
+//        didSet {
+//            if let dateTimeISO = dailyForecast?.dateTimeISO {
+//                dateLabel.text = dateTimeISO
+//            }
+//            if let maxTempF = dailyForecast?.maxTempF {
+//                maxTempLabel.text = String(maxTempF)
+//            }
+//            if let minTempF = dailyForecast?.minTempF {
+//                minTempLabel.text = String(minTempF)
+//            }
+//            if let icon = dailyForecast?.icon {
+//                iconImageView.image = UIImage.init(named: icon)
+//            }
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,43 +10,53 @@ import UIKit
 
 class ForecastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: IBOutlets
     @IBOutlet weak var forecastTableView: UITableView!
     
+    //lazy var forecastService: ForecastService = ForecastService()
+    //var arrayOfDailyForecasts = [DailyForecast?]()
     
-    lazy var forecastService: ForecastService = ForecastService()
-    var arrayOfDailyForecasts = [DailyForecast?]()
-
+    lazy var dailyForecastViewModel: DailyForecastViewModel = {
+        return DailyForecastViewModel()
+    }()
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        forecastTableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil), forCellReuseIdentifier: "forecastTableViewCell")
+        forecastTableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil),
+                                   forCellReuseIdentifier: "forecastTableViewCell")
         forecastTableView.tableFooterView = UIView(frame: .zero)
         
-        forecastService.retrieveNYCForecast {[unowned self] (arrayOfDailyForecasts) in
-            print(arrayOfDailyForecasts)
-            self.arrayOfDailyForecasts = arrayOfDailyForecasts
-            DispatchQueue.main.async(execute: {
-                self.forecastTableView.reloadData()
-            })
+        forecastTableView.estimatedRowHeight = 150
+        forecastTableView.rowHeight = UITableView.automaticDimension
+        
+        initViewModel()
+    }
+    
+    func initViewModel() {
+        
+        dailyForecastViewModel.fetchForecasts()
+        
+        dailyForecastViewModel.reloadTableViewClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.forecastTableView.reloadData()
+            }
         }
         
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfDailyForecasts.count
+        return dailyForecastViewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let forecastCell: ForecastTableViewCell = tableView.dequeueReusableCell(withIdentifier: "forecastTableViewCell", for: indexPath) as! ForecastTableViewCell
-        if let dailyForecast = arrayOfDailyForecasts[indexPath.row] {
-            forecastCell.dailyForecast = dailyForecast
-        }
+        
+        let cellVM = dailyForecastViewModel.getCellViewModel(at: indexPath)
+        forecastCell.forecastCellVM = cellVM
+        
         return forecastCell
     }
 }
